@@ -1,0 +1,44 @@
+body{
+    background: lightgray;
+}
+th{
+    text-align: center;
+}
+.container{
+    margin-top: 3%;
+}
+.form-group{
+    width: 30%;
+    float: left;
+}
+.info{
+    width: 85%;
+    float: left;
+}
+ .avatar{
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.gender{
+    width: 25px;
+}
+.user-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table td[class*=col-]{
+    padding-bottom: 4px;
+}
+#plus-min{
+    font-size: 35px;
+    color: #908d8d;
+    cursor: pointer;
+}
+.stat{
+    text-align: right;
+}
+.stat button{
+    color: #000;
+    background: #908d8d;
+}

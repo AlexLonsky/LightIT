@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-group">
+        <input type="text" class="form-control pull-right" id="search" placeholder="Поиск по имени">
+    </div>
+<div class="stat">
+    <button type="button" class="btn" data-toggle="modal" data-target="#myModal">
+        Show chart
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div id="piechart" style="width: 740px; height: 500px;"></div>
+        </div>
+    </div>
+</div>
+    <table class="user-table" id="mytable">
+        <thead>
+            <tr>
+                <th class="col-xs-1"></th>
+                <th class="col-xs-2">Last</th>
+                <th class="col-xs-2">First</th>
+                <th class="col-xs-2">Username</th>
+                <th class="col-xs-2">Phone</th>
+                <th class="col-xs-2">Location</th>
+                <th class="col-xs-1"></th>
+         </tr>
+        </thead>
+        <tbody id="user">
+        <script id="users" type="text/x-handlebars-template">
+            <tr class="tr-color {{name.first}}" >
+                <td class="col-xs-1"><img class="avatar" src="{{picture.thumbnail}}" alt=""></td>
+                <td class="col-xs-2">{{name.last}}</td>
+                <td class="col-xs-2 "name="{{name.first}}" id="firstName">{{name.first}}</td>
+                <td class="col-xs-2">{{login.username}}</td>
+                <td class="col-xs-2">{{phone}}</td>
+                <td class="col-xs-2">{{location.city}}</td>
+                <td class="col-xs-1">
+                    <span  id="plus-min"  data-toggle="collapse" data-target="#{{login.username}}" class="glyphicon glyphicon-plus"></span>
+                </td>
+            </tr>
+            <tr id="{{login.username}}" class="collapse tr-color-first ">
+                <td colspan="12" class="panel-body {{name.first}}">
+                    <div>
+                        <table class="info">
+                            <tr>
+                                <td><h3>{{name.first}}
+                                    <img class="gender" id="{{gender}}" src="img/{{gender}}.png" alt=""></h3></td>
+                            </tr>
+                            <tr>
+                                <td><b>Username: </b>{{login.username}} </td>
+                                <td><b>Registered: </b>{{registered}}</td>
+                                <td><b>Email: </b>{{email}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Address: </b>{{location.street}} </td>
+                                <td><b>City: </b>{{location.city}}</td>
+                                <td><b>Zip Code: </b>{{location.postcode}} </td>
+                            </tr>
+                            <tr>
+                                <td><b>Birthday: </b>{{dob}}</td>
+                                <td><b>Phone: </b>{{phone}}</td>
+                                <td><b>Cell: </b>{{cell}}</td>
+                            </tr>
+                        </table>
+                        <div class="largeImg "><img src="{{picture.large}}" class="avatar" alt=""></div>
+                    </div>
+                </td>
+            </tr>
+        </script>
+        </tbody>
+    </table>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/drawChart.js"></script>
+</body>
+</html>
